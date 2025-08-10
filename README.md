@@ -1,5 +1,5 @@
 ---
-title: AIO2025M03 DEMO KNN
+title: KNN DEMO
 emoji: 🔥
 colorFrom: green
 colorTo: purple
@@ -9,20 +9,20 @@ app_file: app.py
 pinned: false
 ---
 
-# 🎯 K-Nearest Neighbors (KNN) Interactive Demo
+# K-Nearest Neighbors (KNN) Interactive Demo
 
 An interactive web application demonstrating the K-Nearest Neighbors algorithm with real-time visualization and educational features.
 
-## ✨ Features
+## Features
 
-- **📊 Multiple Datasets**: 4 built-in datasets (Iris, Wine, Breast Cancer, Diabetes)
-- **🎮 Interactive Interface**: Real-time parameter adjustment and prediction
-- **📈 Smart Visualization**: Automatic t-SNE projection for high-dimensional data
-- **🔍 Dual KNN System**: Shows both algorithm-accurate and visually-consistent neighbors
-- **🎛️ Flexible Parameters**: Adjustable K value, distance metrics, and weighting methods
-- **📱 Responsive Design**: Works on desktop and mobile devices
+- **Multiple Datasets**: 4 built-in datasets (Iris, Wine, Breast Cancer, Diabetes)
+- **Interactive Interface**: Real-time parameter adjustment and prediction
+- **Smart Visualization**: Automatic t-SNE projection for high-dimensional data
+- **Dual KNN System**: Shows both algorithm-accurate and visually-consistent neighbors
+- **🎛Flexible Parameters**: Adjustable K value, distance metrics, and weighting methods
+- **Responsive Design**: Works on desktop and mobile devices
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Local Installation
 ```bash
@@ -39,14 +39,14 @@ python app.py
 4. **Input New Point**: Enter feature values for prediction
 5. **Run Prediction**: Get results with interactive visualization
 
-## 🧠 Technical Highlights
+## Technical Highlights
 
 - **Algorithm Accuracy**: Uses original high-dimensional space for precise KNN calculations
 - **Visual Consistency**: Applies KNN in 2D t-SNE space for intuitive visualization
 - **Auto-Detection**: Automatically determines classification vs regression problems
 - **Error Handling**: Robust validation and user-friendly error messages
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.8+
 - Gradio 5.38+
@@ -55,18 +55,3 @@ python app.py
 - NumPy
 - Plotly
 
-## 🎓 Educational Value
-
-Perfect for:
-- Understanding KNN algorithm mechanics
-- Learning about dimensionality reduction (t-SNE)
-- Exploring different distance metrics
-- Comparing classification vs regression approaches
-
-## 📄 License
-
-Educational use for AIO2025 course materials.
-
----
-
-**Live Demo**: [KNN Demo](https://huggingface.co/spaces/VLAI-AIVN/AIO2025M03_DEMO_KNN)
