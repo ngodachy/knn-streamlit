@@ -1,3 +1,5 @@
+
+
 # streamlit_app.py
 import io
 import sys
@@ -12,6 +14,14 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor, NearestNeighbors
 from sklearn.pipeline import Pipeline
 from sklearn.decomposition import PCA
+
+if st.button("🔄 Reset App"):
+    st.cache_data.clear()
+    st.cache_resource.clear()
+    st.session_state.clear()
+    st.experimental_rerun()
+
+
 
 st.set_page_config(page_title="KNN – Streamlit", page_icon="🤖", layout="wide")
 st.title("KNN Demo (Streamlit)")
