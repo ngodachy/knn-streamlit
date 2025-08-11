@@ -20,7 +20,7 @@ st.title("KNN Demo (Streamlit)")
 # Helpers
 # -------------------------------
 SAMPLES = {
-    "Iris": ("classification", load_iris(as_frame=True)),
+    "Breast Cancer": ("classification", load_breast_cancer(as_frame=True)),
     
 }
 
