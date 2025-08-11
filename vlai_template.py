@@ -3,8 +3,7 @@ import gradio as gr
 
 
 PROJECT_NAME = "KNN Demo"
-AIO_YEAR = "2025"
-AIO_MODULE = "3"
+
 # END
 
 
