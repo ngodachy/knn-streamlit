@@ -21,9 +21,7 @@ st.title("KNN Demo (Streamlit)")
 # -------------------------------
 SAMPLES = {
     "Iris": ("classification", load_iris(as_frame=True)),
-    "Wine": ("classification", load_wine(as_frame=True)),
-    "Breast Cancer": ("classification", load_breast_cancer(as_frame=True)),
-    "Diabetes": ("regression", load_diabetes(as_frame=True)),
+    
 }
 
 DISTANCE_CHOICES = {
@@ -96,7 +94,7 @@ def default_value(series: pd.Series):
 def make_feature_inputs(df, target_col):
     X = df.drop(columns=[target_col])
     inputs = {}
-    st.subheader("📝 Feature Inputs")
+    st.subheader(" Feature Inputs")
     cols = st.columns(2)
     for i, col in enumerate(X.columns):
         s = X[col]
@@ -132,7 +130,7 @@ def pca_plot(X_proc, labels, query_vec=None, title="PCA (2D)"):
 # -------------------------------
 # Sidebar: data source
 # -------------------------------
-st.sidebar.header("📦 Data")
+st.sidebar.header(" Data")
 mode = st.sidebar.radio("Choose data source", ["Sample dataset", "Upload CSV"], index=0)
 
 if mode == "Sample dataset":
@@ -150,7 +148,7 @@ else:
     problem_type = st.sidebar.selectbox("Problem type", ["classification", "regression"])
 
 # Quick preview
-st.subheader("📋 Data Preview")
+st.subheader(" Data Preview")
 if df.empty:
     st.info("Upload a CSV or pick a sample dataset.")
     st.stop()
@@ -162,12 +160,12 @@ if not ok:
     st.error(msg)
     st.stop()
 else:
-    st.success(f"✅ Config OK – {problem_type.capitalize()} on target **{target_col}**")
+    st.success(f" Config OK – {problem_type.capitalize()} on target **{target_col}**")
 
 # -------------------------------
 # Sidebar: KNN params
 # -------------------------------
-st.sidebar.header("⚙️ KNN Parameters")
+st.sidebar.header(" KNN Parameters")
 k = st.sidebar.slider("K (neighbors)", min_value=1, max_value=50, value=3, step=1)
 distance_label = st.sidebar.selectbox("Distance", list(DISTANCE_CHOICES.keys()), index=0)
 weighting = st.sidebar.selectbox("Weighting", ["uniform", "distance"], index=0)
@@ -196,7 +194,7 @@ inputs = make_feature_inputs(df, target_col)
 query_df = pd.DataFrame([inputs])
 pred = pipe.predict(query_df)[0]
 
-st.subheader("🎯 Prediction")
+st.subheader(" Prediction")
 if problem_type == "classification":
     st.success(f"**Predicted class:** {pred}")
 else:
@@ -205,7 +203,7 @@ else:
 # -------------------------------
 # Neighbors (table)
 # -------------------------------
-st.subheader("👥 Nearest Neighbors")
+st.subheader(" Nearest Neighbors")
 # Use NearestNeighbors on the same metric to show distances/indices
 metric, p = DISTANCE_CHOICES[distance_label]
 nn = NearestNeighbors(n_neighbors=min(k, len(X)), metric=metric, p=p)
@@ -220,7 +218,7 @@ st.dataframe(neighbors.reset_index(drop=True), use_container_width=True)
 # -------------------------------
 # Visualization (PCA 2D)
 # -------------------------------
-st.subheader("📉 PCA Visualization")
+st.subheader(" PCA Visualization")
 labels = y if problem_type == "classification" else None
 fig = pca_plot(X_proc_dense, labels, query_vec=q_dense, title="PCA (2D) of Preprocessed Features")
 st.plotly_chart(fig, use_container_width=True)
@@ -228,7 +226,7 @@ st.plotly_chart(fig, use_container_width=True)
 # -------------------------------
 # Summary
 # -------------------------------
-st.subheader("🧾 Model Summary")
+st.subheader(" Model Summary")
 st.markdown(
     f"""
 - **Problem**: {problem_type.capitalize()}  
