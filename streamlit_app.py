@@ -15,11 +15,7 @@ from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor, Nearest
 from sklearn.pipeline import Pipeline
 from sklearn.decomposition import PCA
 
-if st.button("🔄 Reset App"):
-    st.cache_data.clear()
-    st.cache_resource.clear()
-    st.session_state.clear()
-    st.experimental_rerun()
+
 
 
 
