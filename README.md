@@ -1,13 +1,4 @@
----
-title: KNN DEMO
-emoji: 🔥
-colorFrom: green
-colorTo: purple
-sdk: gradio
-sdk_version: 5.38.2
-app_file: app.py
-pinned: false
----
+
 
 # K-Nearest Neighbors (KNN) Interactive Demo
 
@@ -19,7 +10,7 @@ An interactive web application demonstrating the K-Nearest Neighbors algorithm w
 - **Interactive Interface**: Real-time parameter adjustment and prediction
 - **Smart Visualization**: Automatic t-SNE projection for high-dimensional data
 - **Dual KNN System**: Shows both algorithm-accurate and visually-consistent neighbors
-- **🎛Flexible Parameters**: Adjustable K value, distance metrics, and weighting methods
+- **Flexible Parameters**: Adjustable K value, distance metrics, and weighting methods
 - **Responsive Design**: Works on desktop and mobile devices
 
 ## Quick Start
